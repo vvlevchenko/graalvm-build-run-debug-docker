@@ -3,7 +3,9 @@ RUN apt-get update -y
 RUN apt-get install -qq -y unzip zip wget curl gdbserver libc6-dev libc6-dbg zlib1g-dev gcc
 RUN apt-get install -qq -y gdb
 ARG JAVA_VERSION
-ENV GRAAL_VERSION=${JAVA_VERSION}-graal
+# graal or graalce
+ARG GRAAL_BUNDLE
+ENV GRAAL_VERSION=${JAVA_VERSION}-${GRAAL_BUNDLE}
 RUN curl -s "https://get.sdkman.io" | bash
 RUN bash -c "source /root/.sdkman/bin/sdkman-init.sh; sdk install java ${GRAAL_VERSION}"
 ENV GRAALVM_HOME=/root/.sdkman/candidates/java/${GRAAL_VERSION}
