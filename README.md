@@ -1,3 +1,3 @@
 build args:
-- `JAVA_VERSION` used to select graal vm candidate in sdk, candidates (`17.0.8`, `20.0.1`, `21`)
-- `GRAAL_BUNDLE` values: `graal` or `graalce`
+- `JAVA_VERSION` used to specify supported java version (please consult https://github.com/graalvm/container/pkgs/container/native-image-community for right tags usage, 
+    but consider that our image based on ol9)
